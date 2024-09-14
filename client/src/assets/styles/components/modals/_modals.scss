@@ -1,0 +1,61 @@
+.tweet-delete-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(48, 64, 77, 0.32);
+  z-index: 3;
+  pointer-events: auto;
+
+  &__wrapper {
+    font-size: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1b2630;
+    width: 22em;
+    padding: 2.5em;
+    border-radius: 1em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  p {
+    font-weight: 300;
+    color: #d3d3d3;
+    margin-bottom: 1em;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+
+    button {
+      border-radius: 25px;
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.delete {
+        background-color: #e74c3c;
+        color: #fff;
+
+        &:hover {
+          background-color: #c0392b;
+        }
+      }
+
+      &.cancel {
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}

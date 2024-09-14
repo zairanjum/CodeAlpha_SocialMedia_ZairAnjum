@@ -1,0 +1,151 @@
+.tweet-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00796b;
+  color: #ffffff;
+  padding: 0.8em;
+  border-radius: 50%;
+  position: fixed;
+  right: 2em;
+  bottom: 4em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  svg {
+    font-size: 1.5em;
+  }
+
+  p {
+    display: none;
+  }
+
+  &:hover {
+    background-color: #004d40;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.follow-btn {
+  padding: 0.8em 2em;
+  background: #ffffff;
+  color: #00796b;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1em;
+  border: 2px solid #00796b;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #e0f2f1;
+    color: #004d40;
+  }
+}
+.unfollow-btn {
+  position: relative;
+  padding: 0.8em 2em;
+  border: 1px solid #e53935;
+  background-color: transparent;
+  color: #e53935;
+  border-radius: 50px;
+  font-size: 1em;
+  transition: border-color 0.3s, color 0.3s;
+
+  &::before {
+    content: "Unfollow";
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(229, 57, 53, 0.2);
+    border-radius: 50px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s;
+  }
+
+  &::after {
+    content: "";
+    border-radius: 50px;
+    position: absolute;
+    inset: 0;
+    background-color: #004d40;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    border-color: #e53935;
+    color: #ffffff;
+    &::before {
+      opacity: 1;
+    }
+
+    &::after {
+      opacity: 0.4;
+    }
+  }
+}
+.edit-btn {
+  position: relative;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  border: 1px solid #ffffff;
+  background-color: #004d40;
+  color: #ffffff;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #00251a;
+  }
+}
+.tweet-btns {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1em 0;
+  background-color: #e0f2f1;
+  border-radius: 10px;
+
+  &__btn {
+    color: #00796b;
+    font-size: 1.2em;
+    background-color: transparent;
+    transition: color 0.3s;
+
+    svg {
+      margin-right: 0.5em;
+    }
+
+    &:hover {
+      color: #004d40;
+    }
+  }
+
+  &__bookmark {
+    animation: bookmark-remove 0.2s ease-in-out forwards alternate;
+
+    &--active {
+      animation: bookmark-add 0.1s ease-in-out forwards alternate;
+    }
+  }
+
+  &__like {
+    animation: like-remove 0.2s ease-in-out forwards alternate;
+
+    &--active {
+
+      svg,
+      small {
+        animation: like-add 0.1s ease-in-out forwards alternate;
+      }
+    }
+  }
+}

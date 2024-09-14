@@ -1,0 +1,77 @@
+.profile-card {
+  padding-bottom: 1.5em;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+  &__banner {
+    width: 100%;
+    height: 12em;
+    background: #009688;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__bio {
+    padding: 2em 1.5em;
+    border-bottom: 1px solid #bdbdbd;
+
+    h3 {
+      margin-top: 0;
+      color: #212121;
+    }
+
+    small {
+      color: #00796b;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 1.5em;
+      padding: 0;
+
+      li {
+        margin-right: 1.5em;
+        font-size: 1em;
+        color: #424242;
+
+        svg {
+          margin-right: 0.5em;
+          color: #00796b;
+        }
+      }
+    }
+
+    &--img {
+      margin-top: -10%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &--follow {
+      p {
+        color: #212121;
+        margin: 0.5em 1.5em 0 0;
+      }
+
+      span {
+        display: inline-block;
+        color: #00796b;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__tweets {
+    width: 100%;
+    padding: 1em 0;
+    border-bottom: 1px solid #bdbdbd;
+  }
+}

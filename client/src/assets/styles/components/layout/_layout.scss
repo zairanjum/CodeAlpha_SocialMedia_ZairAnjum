@@ -1,0 +1,35 @@
+.layout {
+  position: relative;
+  margin-bottom: 3em;
+  .header {
+    border-bottom: 1px solid #d1d1d1;
+    width: 100%;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    background-color: #1c2731;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    svg {
+      font-size: 1.5em;
+      color: #ffffff;
+    }
+  }
+  main {
+    padding: 1em;
+    background-color: #f4f4f4;
+  }
+  @include breakpoint-up(medium) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    main {
+      flex: 1;
+      overflow-y: auto;
+      height: calc(100vh - 4em);
+    }
+  }
+}
